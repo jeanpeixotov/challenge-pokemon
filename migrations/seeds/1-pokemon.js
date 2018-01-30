@@ -1,5 +1,5 @@
 exports.seed = async function (knex) {
-  const count = await knex.count('id as count').from('pokemon').first();
+  const { count } = await knex.count('id as count').from('pokemon').first();
   if (count > 0) return;
 
   await knex.insert({
