@@ -9,14 +9,15 @@ This API to list, create or buy pokemons.
 * Gulp for compile task
 * Docker
 * Knex (Database Code First)
-
-### Back-End
 * Node
 * Typescript
 * Postgres (Knex + Objection.js) 
 
 ### Use
-* list apps: localhost:3001/
+* localhost:3001
+* list pokemons: /get-pokemons
+* create pokemon: /create-pokemon { name: string, price: integer, stock: integer (default 1)}
+* buy pokemon: /buy-pokemon { name: string, quantity: integer}
 
 ## For Dev
 
