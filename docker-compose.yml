@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  web:
+    container_name: pokemon-api
+    build: docker/dev
+    environment:
+      - NODE_ENV=development
+      - NODE_PORT=3001
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DATABASE_HOST=database
+      - DATABASE_DB=pokemon
+      - DATABASE_USER=docker
+      - DATABASE_PASSWORD=1234
+      - DATABASE_PORT=5432
+    ports:
+      - "3001:3001"
+      - "5859:5859"
+    volumes:
+      - .:/src
+    links:
+      - database
+
+  database:
+    container_name: pokemon-database
+    image: postgres:9.5-alpine
+    environment:
+      - POSTGRES_DB=pokemon
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=1234
+    volumes:
+      - ./.data/postgresql:/var/lib/postgresql/data
+    ports:
+      - "3002:5432"

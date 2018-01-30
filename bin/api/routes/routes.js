@@ -1,0 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const errors = require("../../middlewares/errors");
+const express_1 = require("express");
+const actions_1 = require("./actions");
+exports.router = express_1.Router();
+exports.router.get('/', actions_1.list);
+exports.router.use(errors.notFound);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicm91dGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vc2VydmVyL2FwaS9yb3V0ZXMvcm91dGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsbURBQW1EO0FBRW5ELHFDQUFpQztBQUNqQyx1Q0FBaUM7QUFFcEIsUUFBQSxNQUFNLEdBQUcsZ0JBQU0sRUFBRSxDQUFDO0FBRS9CLGNBQU0sQ0FBQyxHQUFHLENBQUMsR0FBRyxFQUFFLGNBQUksQ0FBQyxDQUFDO0FBQ3RCLGNBQU0sQ0FBQyxHQUFHLENBQUMsTUFBTSxDQUFDLFFBQVEsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgZXJyb3JzIGZyb20gJy4uLy4uL21pZGRsZXdhcmVzL2Vycm9ycyc7XG5cbmltcG9ydCB7IFJvdXRlciB9IGZyb20gJ2V4cHJlc3MnO1xuaW1wb3J0IHsgbGlzdCB9IGZyb20gJy4vYWN0aW9ucyc7XG5cbmV4cG9ydCBjb25zdCByb3V0ZXIgPSBSb3V0ZXIoKTtcblxucm91dGVyLmdldCgnLycsIGxpc3QpO1xucm91dGVyLnVzZShlcnJvcnMubm90Rm91bmQpOyJdfQ==
