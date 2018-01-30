@@ -9,9 +9,8 @@ import { notFound } from './middlewares/errors';
 import * as errors from './middlewares/errors';
 import { router as pokemonRoutes } from './routes';
 import * as settings from './settings';
-import * as appService from './api/services/app';
 
-db.connect();
+db.connectAndMigrate();
 
 const publicDir = __dirname + '/../dist';
 const app = express();
@@ -29,5 +28,3 @@ app.use(errors.parser);
 
 app.listen(settings.port, () => console.log(`server started: PORT: ${settings.port} | ENV: ${settings.env}`));
 process.on('unhandledRejection', (reason: any, p: any) => { /* ignore */ });
-
-appService.getApps(5).catch(console.error);

@@ -7,6 +7,6 @@ export const router = Router();
 
 router.get('/get-pokemons', list);
 router.post('/create-pokemons', save);
-router.post('/buy-pokemons/:name/:quantity', buy);
+router.post('/buy-pokemons', buy);
 
 router.use(errors.notFound);

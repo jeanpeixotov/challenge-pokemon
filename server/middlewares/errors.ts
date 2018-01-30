@@ -11,18 +11,5 @@ export function parser(err: any, req: Request, res: Response, next: NextFunction
     return res.status(400).json(err.message);
   }
 
-  switch (err.message) {
-    case 'not-found':
-      err.status = 404;
-      break;
-    case 'access-denied':
-      err.status = 403;
-      break;
-  }
-
-  // if (err instanceof ServiceError && !isDevelopment) {
-  //   return res.status((<any>err).status || 400).send({ message: err.message, data: err.data });
-  // }
-
   next(err);
 }

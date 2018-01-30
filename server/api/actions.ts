@@ -22,8 +22,8 @@ export async function save(req: Request, res: Response, next: NextFunction): Pro
 
 export async function buy(req: Request, res: Response, next: NextFunction): Promise<void> {
   try {
-    const result = await service.buy(req.params.name, req.params.quantity);
-    res.status(result.status || 200).send(result.message || result);
+    const result = await service.buy(req.body.name, req.body.quantity);
+    res.status(200).send(result);
   } catch (err) {
     next(err);
   }
