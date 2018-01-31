@@ -49,7 +49,6 @@ async function buyTransaction(pokemon: Pokemon, quantity: number): Promise<boole
         }
       }
     });
-
     return result.status === 'paid';
   } catch (err) {
     throw new ServiceError(`Status: ${err.response.statusCode}, Message: ${err.response.body}`);
