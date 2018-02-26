@@ -14,7 +14,7 @@ This API to list, create or buy pokemons.
 * Postgres (Knex + Objection.js) 
 
 ### Use
-* localhost:3001
+* localhost:3000
 * list pokemons: /get-pokemons
 * create pokemon: /create-pokemon { name: string, price: integer, stock: integer (default 1)}
 * buy pokemon: /buy-pokemon { name: string, quantity: integer}
@@ -22,9 +22,6 @@ This API to list, create or buy pokemons.
 ## For Dev
 
 ```bash
-# install depedencies
-yarn
-
 #run
 docker-compose up
 ```

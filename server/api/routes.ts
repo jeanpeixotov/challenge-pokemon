@@ -5,8 +5,11 @@ import { list, save, buy } from './actions';
 
 export const router = Router();
 
-router.get('/get-pokemons', list);
-router.post('/create-pokemon', save);
-router.post('/buy-pokemon', buy);
+
+router.get('/', (req, res) => res.json({ status: 'Alive'}));
+
+router.get('/pokemons', list);
+router.post('/pokemons', save);
+router.post('/pokemons/buy', buy);
 
 router.use(errors.notFound);

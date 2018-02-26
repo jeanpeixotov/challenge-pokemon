@@ -6,7 +6,7 @@ services:
     build: docker/dev
     environment:
       - NODE_ENV=development
-      - NODE_PORT=3001
+      - NODE_PORT=3000
       - DB_HOST=database
       - DB_PORT=5432
       - DATABASE_HOST=database
@@ -15,7 +15,7 @@ services:
       - DATABASE_PASSWORD=1234
       - DATABASE_PORT=5432
     ports:
-      - "3001:3001"
+      - "3000:3000"
       - "5859:5859"
     volumes:
       - .:/src
